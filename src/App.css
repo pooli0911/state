@@ -6,8 +6,8 @@
     display: flex;
     align-self: center;
     margin: auto;
+    /* margin-top: -13%; */
 }
-
 /* sm */
 @media (min-width: 576px) { 
   .container {
@@ -122,9 +122,7 @@ body {
   cursor: pointer;
   color: white;
   opacity: 0.6;
-  transition: opacity .25s linear;
 }
-
 .nav-item:hover {
   color: white;
   opacity: 1;
@@ -133,16 +131,23 @@ body {
 .nav-item--active {
   opacity: 1;
 }
+/* .collapse-mobile{
+  display: none;
+} */
 @media (max-width: 768px){
   .collapse-mobile{
     transform: translateX(-100%);
+    transition: all 0.4s;
   }
   .nav-bar{
     background-color: #111828;
     position: absolute;
+    margin-top: 0px;
     z-index: 99;
     width: 80%;
-    flex-wrap: wrap;
+    height: 100vh;
+    flex-direction: column;
+    transition: all 0.4s;
   }
   .nav-item{
     font-size: 1.2em;
@@ -297,4 +302,65 @@ body {
   .product-image {
     height: 24rem;
   }
+}
+/* Hamburger */
+@media (max-width: 768px){
+.menu {
+  z-index: 1;
+  height:36px;
+  width:36px;
+  position: absolute;
+  margin:auto;
+  cursor:pointer;
+}
+.icon-bar {
+  position:absolute;
+  height:4px;
+  background-color:#fff;
+  width:36px;  
+  display:block;
+  border-radius:2px;
+  margin-top:60px;
+  transition:0.35s ease all;
+ }
+.top-bar {
+  top:0px;
+}
+.middle-bar {
+  top:8px;
+  opacity:1;
+}
+.bottom-bar {
+  top:16px;
+}
+@keyframes rotatedown {
+  from { transform: rotate(0deg); }
+     to { transform: rotate(-45deg); }
+ }
+ @keyframes rotateup {
+   from { transform: rotate(0deg); }
+     to { transform: rotate(45deg); }
+ }
+ @-webkit-keyframes rotatedown {
+  from { -webkit-transform: rotate(0deg); }
+     to { -webkit-transform: rotate(-45deg); }
+ }
+ @-webkit-keyframes rotateup {
+   from { -webkit-transform: rotate(0deg); }
+     to { -webkit-transform: rotate(45deg); }
+ }
+ #ani-2.menu.open .top-bar {
+   top:7px;
+   animation:rotatedown 0.3s forwards;
+   animation-delay:0.30s;
+ }
+ #ani-2.menu.open .middle-bar {
+   opacity:0;
+   width:0%;
+ }
+ #ani-2.menu.open .bottom-bar {
+   top:7px;
+   animation:rotateup 0.3s forwards;
+   animation-delay:0.30s;
+ }
 }

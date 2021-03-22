@@ -2,18 +2,16 @@ export default function HamMenu({ onClick, isOnTouch }) {
     return (
         <>
             {isOnTouch ? (
-                <span onClick={onClick} className="ham-menu show-mobile">
-                    <span className="ham-menu-bar1 ham-menu-bar1--touch"></span>
-                    <span className="ham-menu-bar2 ham-menu-bar2--touch"></span>
-                    <span className="ham-menu-bar3 ham-menu-bar3--touch"></span>
-                    <span className="ham-menu-bar4 ham-menu-bar4--touch"></span>
+                <span onClick={onClick} className="menu open" id="ani-2">
+                    <span className="icon-bar top-bar"></span>
+                    <span className="icon-bar middle-bar"></span>
+                    <span className="icon-bar bottom-bar"></span>
                 </span>
             ) : (
-                <span onClick={onClick} className="ham-menu show-mobile">
-                    <span className="ham-menu-bar1"></span>
-                    <span className="ham-menu-bar2"></span>
-                    <span className="ham-menu-bar3"></span>
-                    <span className="ham-menu-bar4"></span>
+                <span onClick={onClick} className="menu" id="ani-2">
+                    <span className="icon-bar top-bar"></span>
+                    <span className="icon-bar middle-bar"></span>
+                    <span className="icon-bar bottom-bar"></span>
                 </span>
             )}
         </>
